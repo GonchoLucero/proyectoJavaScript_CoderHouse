@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Simulador De Central Eléctrica</title>
+
+  <!--Link Java Script-->
+  <script defer src="script.js"></script>
 </head>
 <body>
   <h1>Simulador De Central Eléctrica</h1>
   <p>
-    Este simulador permite conectar electrodomésticos a la corriente eléctrica.
-    Si el consumo total supera el límite de seguridad, se activa la térmica y se corta la energía.
+    Este simulador permite conectar electrodomésticos a la corriente eléctrica. Cada electrodoméstico tiene un consumo asignado y
+    si este consumo supera el límite de seguridad maximo que tiene la corriente eléctrica, se activa la térmica y se corta la energía.
+    El simulador tiene un menu principal el cual primero puedes observar los electrodomésticos y si se encuentran encendidos o apagados.
+    Luego tiene la opcion de conectar los electrodomésticos, el cual si el consumo esta dentro de los parametros permitidos se enciende y sino
+    salta la termica y el electrodoméstico no se enciende. Y por ultimo, tiene la opcion de salir del simulador.
   </p>
 
-  <script src="script.js"></script>
 </body>
 </html>

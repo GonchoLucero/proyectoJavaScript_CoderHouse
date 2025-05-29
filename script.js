@@ -20,7 +20,7 @@ function mostrarElectrodomesticos() {
   let mensaje = "📋 Lista de Electrodomesticos:\n\n";
   for (let i = 0; i < electrodomesticos.length; i++) {
     let estado = electrodomesticos[i].encendido ? "Encendido ⚡" : "Apagado ❌";
-    mensaje += (i + 1) + ". " + electrodomesticos[i].nombre + " - " + estado + "\n";
+    mensaje += (i + 1) + ". " + electrodomesticos[i].nombre + " - " + "Consumo: " + electrodomesticos[i].consumo +" W " + " - " + estado + "\n";
   }
   alert(mensaje);
 }
