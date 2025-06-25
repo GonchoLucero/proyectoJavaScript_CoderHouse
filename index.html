@@ -1,21 +1,33 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Simulador De Central Eléctrica</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador De Central Electrica</title>
 
-  <!--Link Java Script-->
-  <script defer src="script.js"></script>
+    <!--Link CSS-->
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <h1>Simulador De Central Eléctrica</h1>
-  <p>
-    Este simulador permite conectar electrodomésticos a la corriente eléctrica. Cada electrodoméstico tiene un consumo asignado y
-    si este consumo supera el límite de seguridad maximo que tiene la corriente eléctrica, se activa la térmica y se corta la energía.
-    El simulador tiene un menu principal el cual primero puedes observar los electrodomésticos y si se encuentran encendidos o apagados.
-    Luego tiene la opcion de conectar los electrodomésticos, el cual si el consumo esta dentro de los parametros permitidos se enciende y sino
-    salta la termica y el electrodoméstico no se enciende. Y por ultimo, tiene la opcion de salir del simulador.
-  </p>
 
+<body>
+     <div class="contenedor">
+        <div class="titulo">
+            <h1>⚡ Simulador De Central Eléctrica</h1>
+            <p>Este simulador permite conectar electrodomésticos a la corriente eléctrica.
+                Cada electrodoméstico tiene un consumo asignado. Puedes encender cualquier electrodoméstico,
+                pero si el consumo supera el límite de seguridad máximo, se activa la térmica y se corta la energía
+                automáticamente.</p>
+        </div>
+
+		<main class="contenedores" id="main">
+			<div id="contenedor-electrodomesticos"></div>
+            <div id="panel-encendidos"></div>
+		</main>
+     </div>
+		
+    <!--Link JavaScript-->
+    <script src="js/script.js"></script>
 </body>
+
 </html>
