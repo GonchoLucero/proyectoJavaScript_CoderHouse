@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #202a58 0%, #52ad42 100%);
+    background: linear-gradient(135deg, #16213e, #0f3460);
     min-height: 100vh;
 }
 
@@ -15,7 +15,6 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    margin-left: 360px; 
 }
 
 /* TITULO */
@@ -24,19 +23,19 @@ body {
     background: white;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
+    border: 2px solid #ffd700;
 }
 
 .titulo h1 {
-    color: #4a5568;
+    color: #2d3748;
     font-size: 2.5em;
     margin-bottom: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 2px 2px 4px rgba(255, 215, 0, 0.3);
 }
 
 .titulo p {
-    color: #4a5568;
+    color: black;
     line-height: 1.6;
     font-size: 1.1em;
 }
@@ -51,31 +50,32 @@ body {
 
 .consumo {
     font-weight: bold;
-    color: #333;
+    color: #ff6b35;
     display: block;
     margin: 0.5rem 0;
 }
 
 /* ELECTRODOMESTICOS */
 .electrodomesticos-card {
-    background-color: white;
+    background: white;
     padding: 1rem;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px black;
     width: 250px;
     text-align: center;
     transition: all 0.3s ease;
-    border: 3px solid transparent;
+    border: 3px solid red;
 }
 
 .electrodomesticos-card:hover {
-    transform: scale(1.03);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35pxb black;
 }
 
 .electrodomesticos-card.encendido {
-    border-color: #4CAF50;
-    background-color: #f0fff0;
-    box-shadow: 0 4px 20px rgba(76, 175, 80, 0.3);
+    border-color: #00d084;
+    background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
+    box-shadow: 0 8px 30px #00d084;
 }
 
 .electrodomesticos-card img {
@@ -85,36 +85,26 @@ body {
 
 .electrodomesticos-card h3 {
     margin: 0.5rem 0;
-}
-
-.electrodomesticos-card p {
-    font-size: 0.95rem;
-    color: #444;
+    color: black;
+    font-size: 1.2em;
 }
 
 .btn-encender {
-    background-color: #3ed3e4;
+    background: #00d084;
     border: none;
     color: black;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
     cursor: pointer;
     font-weight: bold;
     transition: all 0.3s ease;
-}
-
-.btn-encender:hover {
-    background-color: #2bc4d6;
-    transform: translateY(-2px);
+    box-shadow: 0 4px 15px black;
+    margin-top: 10px;
 }
 
 .encendido .btn-encender {
-    background-color: #ff6b6b;
-    color: white;
-}
-
-.encendido .btn-encender:hover {
-    background-color: #e55555;
+    background: red;
+    box-shadow: 0 4px 15px black;
 }
 
 #contenedor-electrodomesticos {
@@ -128,25 +118,24 @@ body {
 
 /* PANEL DE ENCENDIDOS */
 #panel-encendidos {
-    background-color: white;
+    background: white;
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     width: 320px;
     min-width: 320px;
     height: fit-content;
-    position: fixed;
+    border: 2px solid #ffd700;
+    position: sticky;
     top: 20px;
-    left: 20px;
-    z-index: 1000;
 }
 
 #panel-encendidos h3 {
-    color: #4a5568;
+    color: #2d3748;
     margin-bottom: 15px;
     text-align: center;
     font-size: 1.3em;
-    border-bottom: 2px solid #e2e8f0;
+    border-bottom: 2px solid #ffd700;
     padding-bottom: 10px;
 }
 
@@ -155,38 +144,34 @@ body {
     color: #718096;
     font-style: italic;
     padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    border: 2px dashed #cbd5e0;
 }
 
 .item-encendido {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 8px;
-    background-color: #f7fafc;
+    background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%);
     border-radius: 8px;
-    border-left: 4px solid #4CAF50;
+    border-left: 4px solid #00d084;
+    box-shadow: 0 2px 8px rgba(0, 208, 132, 0.1);
 }
 
 .nombre-electrodomestico {
     font-weight: 600;
-    color: #2d3748;
+    color: black;
 }
 
 .consumo-electrodomestico {
-    color: #4a5568;
+    color: #2d3748;
     font-size: 0.9em;
-    background-color: #e2e8f0;
-    padding: 4px 8px;
-    border-radius: 12px;
-}
-
-.consumo-total {
-    margin-top: 15px;
-    padding: 15px;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 8px;
-    text-align: center;
-    font-size: 1.1em;
+    background: #ffd700;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-weight: bold;
+    box-shadow: black;
 }
