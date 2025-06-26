@@ -55,26 +55,24 @@ body {
     margin: 0.5rem 0;
 }
 
-/* ELECTRODOMESTICOS */
+/* CARTAS ELECTRODOMESTICOS */
 .electrodomesticos-card {
     background: white;
     padding: 1rem;
     border-radius: 12px;
-    box-shadow: 0 8px 25px black;
     width: 250px;
     text-align: center;
     transition: all 0.3s ease;
-    border: 3px solid red;
+    box-shadow: 0 8px 30px rgb(109, 32, 32); 
 }
 
 .electrodomesticos-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35pxb black;
 }
 
 .electrodomesticos-card.encendido {
     border-color: #00d084;
-    background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
+    background: white;
     box-shadow: 0 8px 30px #00d084;
 }
 
@@ -89,24 +87,6 @@ body {
     font-size: 1.2em;
 }
 
-.btn-encender {
-    background: #00d084;
-    border: none;
-    color: black;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px black;
-    margin-top: 10px;
-}
-
-.encendido .btn-encender {
-    background: red;
-    box-shadow: 0 4px 15px black;
-}
-
 #contenedor-electrodomesticos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -116,8 +96,8 @@ body {
     max-width: 800px;
 }
 
-/* PANEL DE ENCENDIDOS */
-#panel-encendidos {
+/* PANEL CONSUMO ELECTRODOMESTICOS */
+#panel-electrodomesticos {
     background: white;
     border-radius: 15px;
     padding: 20px;
@@ -130,7 +110,7 @@ body {
     top: 20px;
 }
 
-#panel-encendidos h3 {
+#panel-electrodomesticos h3 {
     color: #2d3748;
     margin-bottom: 15px;
     text-align: center;
@@ -149,7 +129,7 @@ body {
     border: 2px dashed #cbd5e0;
 }
 
-.item-encendido {
+.electrodomestico-encendido {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -174,4 +154,36 @@ body {
     border-radius: 15px;
     font-weight: bold;
     box-shadow: black;
+}
+
+/* TECLA ENCENDER Y APAGAR */
+.tecla-contenedor {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tecla {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background: gray;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tecla-visual {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 24px;
+    height: 24px;
+    background: red;
+    border-radius: 50%;
+}
+
+.tecla.encendido .tecla-visual {
+    transform: translateX(30px);
+    background: #00d084;
 }

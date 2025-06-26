@@ -1,10 +1,10 @@
-///// ARRAYS Y VARIABLES /////
+//// ARRAYS Y VARIABLES ////
 
 const contenedorElectrodomesticos = document.getElementById('contenedor-electrodomesticos')
-const panelEncendidos = document.getElementById('panel-encendidos')
+const panelElectrodomesticos = document.getElementById('panel-electrodomesticos')
 
 
-// LISTA ELECTRODOMESTICOS (usando imágenes de placeholder)
+//// LISTA ELECTRODOMESTICOS ////
 const electrodomesticos = [
 	{ id: 1, nombre: "Heladera", consumo: 328, estaEncendido: false, imagen: "img/refrigerador.png" },
 	{ id: 2, nombre: "Lavarropas", consumo: 875, estaEncendido: false, imagen: "img/lavarropas.png" },
@@ -14,6 +14,7 @@ const electrodomesticos = [
 	{ id: 6, nombre: "PC", consumo: 470, estaEncendido: false, imagen: "img/pc.png" },
 ];
 
+//// FUNCIONES //
 function creadoraDeCartas() {
 	
 	contenedorElectrodomesticos.innerHTML = '';
@@ -26,18 +27,20 @@ function creadoraDeCartas() {
 		card.innerHTML = `<img src="${ele.imagen}" alt="${ele.nombre}"/>
                     <h3>${ele.nombre}</h3>
                     <span class="consumo">${ele.consumo} Watts</span>
-                    <button class="btn-encender" data-id="${ele.id}">${ele.estaEncendido ? 'APAGAR' : 'ENCENDER'}</button>
+					 <div class="tecla-contenedor">
+                        <div class="tecla ${ele.estaEncendido ? 'encendido' : ''}" data-id="${ele.id}">
+                            <div class="tecla-visual"></div>
+                        </div>
+                    </div>
                 `;
 
-	
-		const boton = card.querySelector('.btn-encender');
-		boton.addEventListener('click', () => toggleElectrodomestico(ele.id));
-
+		const tecla = card.querySelector('.tecla');
+		tecla.addEventListener('click', () => botonElectrodomestico(ele.id));
 		contenedorElectrodomesticos.appendChild(card);
 	});
 }
 
-function toggleElectrodomestico(id) {
+function botonElectrodomestico(id) {
 	const electrodomestico = electrodomesticos.find(ele => ele.id === id);
 
 	if (electrodomestico) {
@@ -55,14 +58,14 @@ function actualizarInterfaz() {
 function actualizarPanel() {
 	const encendidos = electrodomesticos.filter(ele => ele.estaEncendido);
 
-	panelEncendidos.innerHTML = '<h3>Electrodomésticos Encendidos</h3>';
+	panelElectrodomesticos.innerHTML = '<h3>Electrodomésticos Encendidos</h3>';
 
 	if (encendidos.length === 0) {
-		panelEncendidos.innerHTML += '<p class="sin-electrodomesticos">Ningún electrodoméstico encendido</p>';
+		panelElectrodomesticos.innerHTML += '<p class="sin-electrodomesticos">Ningún electrodoméstico encendido</p>';
 	} else {
 		encendidos.forEach(ele => {
-			panelEncendidos.innerHTML += `
-                        <div class="item-encendido">
+			panelElectrodomesticos.innerHTML += `
+                        <div class="electrodomestico-encendido">
                             <span class="nombre-electrodomestico">${ele.nombre}</span>
                             <span class="consumo-electrodomestico">${ele.consumo} Watts</span>
                         </div>
