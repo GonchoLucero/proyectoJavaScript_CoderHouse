@@ -1,0 +1,50 @@
+{ "electrodomesticos": [
+	{ 
+    "id": 1,
+    "nombre": "Heladera", 
+    "consumo": 328,
+    "estaEncendido": false,
+    "imagen": "img/refrigerador.png"
+    },
+
+	{ 
+    "id": 2, 
+    "nombre": "Lavarropas", 
+    "consumo": 875, 
+    "estaEncendido": false, 
+    "imagen": "img/lavarropas.png" 
+    },
+
+	{ 
+    "id": 3, 
+    "nombre": "Microondas", 
+    "consumo": 800, 
+    "estaEncendido": false, 
+    "imagen": "img/microondas.png" 
+    },
+
+	{
+    "id": 4, 
+    "nombre": "Aire Acondicionado", 
+    "consumo": 1200, 
+    "estaEncendido": false, 
+    "imagen": "img/aireAcondicionado.png" 
+    },
+
+	{ 
+    "id": 5, 
+    "nombre": "Televisor", 
+    "consumo": 200, 
+    "estaEncendido": false,  
+    "imagen": "img/televisores.png" 
+    },
+
+	{ 
+    "id": 6, 
+    "nombre": "PC", 
+    "consumo": 470, 
+    "estaEncendido": false,  
+    "imagen": "img/pc.png" 
+    }
+    ]
+}

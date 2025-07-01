@@ -3,16 +3,25 @@
 const contenedorElectrodomesticos = document.getElementById('contenedor-electrodomesticos')
 const panelElectrodomesticos = document.getElementById('panel-electrodomesticos')
 
-
 //// LISTA ELECTRODOMESTICOS ////
-const electrodomesticos = [
-	{ id: 1, nombre: "Heladera", consumo: 328, estaEncendido: false, imagen: "img/refrigerador.png" },
-	{ id: 2, nombre: "Lavarropas", consumo: 875, estaEncendido: false, imagen: "img/lavarropas.png" },
-	{ id: 3, nombre: "Microondas", consumo: 800, estaEncendido: false, imagen: "img/microondas.png" },
-	{ id: 4, nombre: "Aire Acondicionado", consumo: 1200, estaEncendido: false, imagen: "img/aireAcondicionado.png" },
-	{ id: 5, nombre: "Televisor", consumo: 200, estaEncendido: false, imagen: "img/televisores.png" },
-	{ id: 6, nombre: "PC", consumo: 470, estaEncendido: false, imagen: "img/pc.png" },
-];
+let electrodomesticos=[]
+
+// JSON //
+fetch('./data.json')
+	.then((res) =>{
+		if(!res.ok){
+			throw new Error('No se encuentra el archivo');
+		}
+		return res.json();
+	})
+	.then((data) =>{
+		electrodomesticos = data.electrodomesticos;
+		main();
+	})
+	.catch((error) => {
+		console.log('Error')
+	})
+
 
 //// FUNCIONES //
 function creadoraDeCartas() {
@@ -79,5 +88,3 @@ function main() {
 	creadoraDeCartas();
 	actualizarPanel();
 }
-
-main();
