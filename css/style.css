@@ -1,4 +1,4 @@
- /* ESTILOS GENERALES */
+/* ESTILOS GENERALES */
 * {
     margin: 0;
     padding: 0;
@@ -76,6 +76,17 @@ body {
     box-shadow: 0 8px 30px #00d084;
 }
 
+/* NUEVA CLASE PARA SISTEMA DESHABILITADO */
+.electrodomesticos-card.deshabilitado {
+    opacity: 0.5;
+    background: #f1f1f1;
+    box-shadow: 0 8px 30px rgba(128, 128, 128, 0.3);
+}
+
+.electrodomesticos-card.deshabilitado:hover {
+    transform: none;
+}
+
 .electrodomesticos-card img {
     width: 100%;
     border-radius: 10px;
@@ -119,12 +130,49 @@ body {
     padding-bottom: 10px;
 }
 
+#panel-electrodomesticos h4 {
+    color: #2d3748;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.2em;
+    border-bottom: 2px solid #ffd700;
+    padding-bottom: 10px;
+}
+
+.consumo-total-container {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 2px dashed #cbd5e0;
+}
+
+.consumo-info {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-bottom: 15px;
+}
+
+.consumo-actual {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2d3748;
+}
+
+.consumo-limite {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2d3748;
+    margin-left: 5px;
+}
+
 .sin-electrodomesticos {
     text-align: center;
     color: #718096;
     font-style: italic;
     padding: 20px;
-    background-color: white;
+    background-color: #f8f9fa;
     border-radius: 8px;
     border: 2px dashed #cbd5e0;
 }
@@ -153,7 +201,6 @@ body {
     padding: 6px 12px;
     border-radius: 15px;
     font-weight: bold;
-    box-shadow: black;
 }
 
 /* TECLA ENCENDER Y APAGAR */
@@ -186,4 +233,271 @@ body {
 .tecla.encendido .tecla-visual {
     transform: translateX(30px);
     background: #00d084;
+}
+
+/* TECLA DESHABILITADA */
+.tecla.deshabilitado {
+    cursor: not-allowed;
+    background: #ccc;
+}
+
+.tecla.deshabilitado .tecla-visual {
+    background: #999;
+}
+
+/* ESTADO DEL SISTEMA */
+.estado-sistema {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px dashed #cbd5e0;
+}
+
+.estado-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.estado-icono {
+    font-size: 1.5em;
+}
+
+.estado-texto {
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.estado-descripcion {
+    color: black;
+    font-size: 0.9em;
+    line-height: 1.4;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 4px solid black;
+}
+
+/* BOTON RESTABLECER SISTEMA */
+.boton-restablecer-container {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.boton-restablecer {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.boton-restablecer:hover {
+    background: linear-gradient(135deg, #b91c1c, #991b1b);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(220, 38, 38, 0.4);
+}
+
+.boton-restablecer:active {
+    transform: translateY(0);
+}
+
+/* ALERTAS */
+/* ALERTA BIENVENIDA */
+.bienvenidos{
+    text-align: left;
+    margin: 20px 0;
+}
+
+.bienvenidos-title{
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.bienvenidos-list{
+    list-style: none;
+    padding-left: 0;
+    font-weight: bold;
+}
+
+.bienvenidos-item{
+    margin-bottom: 10px;
+}
+
+.bienvenidos-warning{
+    margin-top: 15px;
+    color: #ff8000;
+    font-weight: bold;
+}
+
+.boton-confirmar {
+    color: black;
+    border: 4px solid black;
+    font-weight: bold;
+    font-size: 1.1em ;
+}
+
+/* ALERTA ELECTRODOMESTICOS */
+.alerta-electrodomesticos{
+    text-align: left;
+    padding: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.titulo-imagen {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.imagen-alerta {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.nombre-titulo {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: black;
+    margin: 0;
+}
+
+.popup-alerta .swal2-title {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+/* ALERTA TERMICA */
+.alerta-termica {
+    text-align: center;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.termica-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.termica-caja {
+    width: 80px;
+    height: 100px;
+    background: linear-gradient(145deg, #2c3e50, #34495e);
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 8px 16px black;
+    border: 3px solid #7f8c8d;
+    margin-bottom: 10px;
+}
+
+.termica-switch {
+    width: 30px;
+    height: 50px;
+    background: #e74c3c;
+    border-radius: 15px;
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: inset 0 2px 4px black;
+    animation: parpadeo 1s infinite;
+}
+
+.termica-indicador {
+    width: 12px;
+    height: 12px;
+    background: #e74c3c;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    animation: parpadeo 1s infinite;
+    box-shadow: 0 0 10px #e74c3c;
+}
+
+@keyframes parpadeo {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+}
+
+.termica-info {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.termica-info h3 {
+    color: #e74c3c;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.consumo-detalle {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 5px solid #e74c3c;
+}
+
+.consumo-detalle p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+/* MENSAJE DESCONEXION */
+.mensaje-desconexion {
+    background: #fff3cd;
+    border: 2px solid #ffc107;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.mensaje-desconexion h4 {
+    color: #856404;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.mensaje-desconexion p {
+    color: #856404;
+    margin: 8px 0;
+    font-size: 1em;
+}
+
+.restablecer-mensaje {
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 10px;
+    color: #721c24;
+    font-weight: bold;
+}
+
+.titulo-termica {
+    color: #e74c3c;
+    font-size: 1.5em;
+    font-weight: bold;
 }
