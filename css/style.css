@@ -502,47 +502,19 @@ body {
     font-weight: bold;
 }
 
-/* MEDIA QUERIES PARA DISPOSITIVOS ESPECÍFICOS */
-
-/* Dispositivos extra pequeños (hasta 480px) - Teléfonos en vertical */
-@media (max-width: 480px) {
-    .contenedor {
-        padding: 10px;
-    }
-    
-    .titulo {
-        padding: 15px;
-        margin-bottom: 15px;
-    }
-    
-    .titulo h1 {
-        font-size: 1.8em;
-    }
-    
-    .titulo p {
-        font-size: 0.9em;
-    }
-    
+/* MEDIA QUERIES PARA DISPOSITIVOS */
+@media (max-width: 768px) {
     .contenedores {
         flex-direction: column;
+        padding: 1rem;
         gap: 1rem;
-        padding: 0.5rem 0;
     }
     
     #contenedor-electrodomesticos {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
-        gap: 0.8rem;
-        order: 2;
-    }
-    
-    #panel-electrodomesticos {
-        order: 1;
-        position: static;
-        width: 100%;
-        min-width: unset;
-        margin-bottom: 1rem;
-        padding: 15px;
+        gap: 1rem;
+        max-width: 100%;
     }
     
     .electrodomesticos-card {
@@ -550,30 +522,139 @@ body {
         padding: 0.8rem;
     }
     
-    .electrodomesticos-card img {
-        width: 60px;
-        height: 60px;
-        object-fit: cover;
+    #panel-electrodomesticos {
+        width: 100%;
+        min-width: auto;
+        position: static;
+        order: -1;
+    }
+    
+    .titulo h1 {
+        font-size: 2em;
+    }
+    
+    .titulo p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor {
+        padding: 10px;
+    }
+    
+    .titulo {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .titulo h1 {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+    }
+    
+    .titulo p {
+        font-size: 0.9em;
+        line-height: 1.4;
+    }
+    
+    .contenedores {
+        padding: 0.5rem;
+        gap: 0.5rem;
+    }
+    
+    #contenedor-electrodomesticos {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        gap: 0.8rem;
+    }
+    
+    .electrodomesticos-card {
+        width: 100%;
+        padding: 0.8rem;
     }
     
     .electrodomesticos-card h3 {
+        font-size: 1.1em;
+    }
+    
+    .electrodomesticos-card img {
+        max-height: 120px;
+        object-fit: cover;
+    }
+    
+    #panel-electrodomesticos {
+        padding: 15px;
+        width: 100%;
+        min-width: auto;
+        position: static;
+        order: -1;
+    }
+    
+    #panel-electrodomesticos h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+    
+    #panel-electrodomesticos h4 {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+    
+    .consumo-total-container {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .consumo-actual,
+    .consumo-limite {
+        font-size: 1.3em;
+    }
+    
+    .estado-sistema {
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .estado-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+    
+    .estado-icono {
+        font-size: 1.8em;
+    }
+    
+    .estado-texto {
         font-size: 1em;
     }
     
-    .consumo {
-        font-size: 0.9em;
+    .estado-descripcion {
+        font-size: 0.85em;
+        padding: 8px;
     }
     
     .electrodomestico-encendido {
         flex-direction: column;
-        gap: 5px;
         text-align: center;
-        padding: 8px;
+        gap: 8px;
+        padding: 10px;
+    }
+    
+    .nombre-electrodomestico {
+        font-size: 1em;
     }
     
     .consumo-electrodomestico {
-        margin-left: 0;
-        margin-top: 5px;
+        font-size: 0.85em;
+        padding: 4px 8px;
+    }
+    
+    .boton-restablecer {
+        padding: 10px 16px;
+        font-size: 0.9em;
+        width: 100%;
     }
     
     .tecla {
@@ -589,235 +670,9 @@ body {
     .tecla.encendido .tecla-visual {
         transform: translateX(25px);
     }
-    
-    .consumo-actual,
-    .consumo-limite {
-        font-size: 1.2em;
-    }
-    
-    .estado-texto {
-        font-size: 0.9em;
-    }
-    
-    .boton-restablecer {
-        padding: 10px 15px;
-        font-size: 0.9em;
-    }
 }
 
-/* Dispositivos pequeños (481px - 768px) - Teléfonos en horizontal y tablets pequeñas */
-@media (min-width: 481px) and (max-width: 768px) {
-    .contenedor {
-        padding: 15px;
-    }
-    
-    .titulo {
-        padding: 20px;
-        margin-bottom: 20px;
-    }
-    
-    .titulo h1 {
-        font-size: 2em;
-    }
-    
-    .titulo p {
-        font-size: 1em;
-    }
-    
-    .contenedores {
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 1rem 0;
-    }
-    
-    #contenedor-electrodomesticos {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 1rem;
-        order: 2;
-    }
-    
-    #panel-electrodomesticos {
-        order: 1;
-        position: static;
-        width: 100%;
-        min-width: unset;
-        margin-bottom: 1rem;
-    }
-    
-    .electrodomesticos-card {
-        width: 100%;
-        padding: 1rem;
-    }
-    
-    .electrodomesticos-card img {
-        width: 80px;
-        height: 80px;
-        object-fit: cover;
-    }
-    
-    .electrodomestico-encendido {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-}
-
-/* Dispositivos medianos (769px - 1024px) - Tablets en horizontal */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .contenedor {
-        padding: 20px;
-    }
-    
-    .titulo {
-        padding: 25px;
-        margin-bottom: 25px;
-    }
-    
-    .titulo h1 {
-        font-size: 2.2em;
-    }
-    
-    .contenedores {
-        flex-direction: row;
-        gap: 1.5rem;
-        padding: 1.5rem 0;
-    }
-    
-    #contenedor-electrodomesticos {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 1.2rem;
-        max-width: 650px;
-    }
-    
-    #panel-electrodomesticos {
-        width: 280px;
-        min-width: 280px;
-        position: sticky;
-        top: 20px;
-    }
-    
-    .electrodomesticos-card {
-        width: 100%;
-        padding: 1rem;
-    }
-    
-    .electrodomesticos-card img {
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-    }
-}
-
-/* Dispositivos grandes (1025px y más) - Laptops y desktops */
-@media (min-width: 1025px) {
-    .contenedor {
-        padding: 20px;
-    }
-    
-    .titulo {
-        padding: 30px;
-        margin-bottom: 30px;
-    }
-    
-    .contenedores {
-        gap: 2rem;
-        padding: 2rem;
-    }
-    
-    #contenedor-electrodomesticos {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 1.5rem;
-        max-width: 800px;
-    }
-    
-    #panel-electrodomesticos {
-        width: 320px;
-        min-width: 320px;
-    }
-    
-    .electrodomesticos-card {
-        width: 250px;
-    }
-    
-    .electrodomesticos-card img {
-        width: 100%;
-        height: 120px;
-        object-fit: cover;
-    }
-}
-
-/* Orientación horizontal en móviles (hasta 768px) */
-@media (max-width: 768px) and (orientation: landscape) {
-    .contenedores {
-        flex-direction: row;
-        gap: 1rem;
-        padding: 1rem 0;
-    }
-    
-    #contenedor-electrodomesticos {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 0.8rem;
-        order: 1;
-        max-width: 60%;
-    }
-    
-    #panel-electrodomesticos {
-        order: 2;
-        width: 35%;
-        min-width: 250px;
-        position: static;
-        margin-bottom: 0;
-    }
-    
-    .electrodomesticos-card {
-        width: 100%;
-        padding: 0.5rem;
-    }
-    
-    .electrodomesticos-card img {
-        width: 50px;
-        height: 50px;
-        object-fit: cover;
-    }
-    
-    .electrodomesticos-card h3 {
-        font-size: 0.9em;
-    }
-    
-    .consumo {
-        font-size: 0.8em;
-    }
-    
-    .tecla {
-        width: 45px;
-        height: 22px;
-    }
-    
-    .tecla-visual {
-        width: 18px;
-        height: 18px;
-    }
-    
-    .tecla.encendido .tecla-visual {
-        transform: translateX(23px);
-    }
-}
-
-/* Ajustes específicos para pantallas muy pequeñas (hasta 320px) */
 @media (max-width: 320px) {
-    .contenedor {
-        padding: 8px;
-    }
-    
-    .titulo {
-        padding: 12px;
-        margin-bottom: 12px;
-    }
-    
     .titulo h1 {
         font-size: 1.5em;
     }
@@ -826,98 +681,100 @@ body {
         font-size: 0.8em;
     }
     
-    #contenedor-electrodomesticos {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(6, 1fr);
-        gap: 0.5rem;
-    }
-    
     .electrodomesticos-card {
         padding: 0.6rem;
     }
     
-    .electrodomesticos-card img {
-        width: 50px;
-        height: 50px;
-    }
-    
     .electrodomesticos-card h3 {
-        font-size: 0.9em;
+        font-size: 1em;
     }
     
-    .consumo {
-        font-size: 0.8em;
+    .electrodomesticos-card img {
+        max-height: 100px;
     }
     
     #panel-electrodomesticos {
-        padding: 12px;
+        padding: 10px;
+    }
+    
+    #panel-electrodomesticos h3 {
+        font-size: 1.1em;
+    }
+    
+    #panel-electrodomesticos h4 {
+        font-size: 1em;
     }
     
     .consumo-actual,
     .consumo-limite {
-        font-size: 1.1em;
+        font-size: 1.2em;
     }
     
-    .estado-texto {
+    .estado-descripcion {
         font-size: 0.8em;
     }
     
     .boton-restablecer {
-        padding: 8px 12px;
         font-size: 0.8em;
+        padding: 8px 12px;
     }
 }
 
-/* Ajustes para pantallas muy grandes (más de 1400px) */
-@media (min-width: 1400px) {
-    .contenedor {
-        max-width: 1400px;
-        padding: 30px;
+/* ALERTAS EN DISPOSITIVOS */
+@media (max-width: 480px) {
+    .alerta-termica {
+        padding: 10px;
     }
     
-    .titulo {
-        padding: 40px;
-        margin-bottom: 40px;
+    .termica-caja {
+        width: 60px;
+        height: 80px;
     }
     
-    .titulo h1 {
-        font-size: 3em;
+    .termica-switch {
+        width: 25px;
+        height: 40px;
+        top: 20px;
     }
     
-    .titulo p {
-        font-size: 1.2em;
+    .termica-indicador {
+        width: 10px;
+        height: 10px;
+        top: 6px;
+        right: 6px;
     }
     
-    .contenedores {
-        gap: 3rem;
-        padding: 3rem;
+    .consumo-detalle {
+        padding: 10px;
     }
     
-    #contenedor-electrodomesticos {
-        gap: 2rem;
-        max-width: 900px;
+    .consumo-detalle p {
+        font-size: 0.9em;
     }
     
-    #panel-electrodomesticos {
-        width: 380px;
-        min-width: 380px;
-        padding: 25px;
+    .mensaje-desconexion {
+        padding: 10px;
     }
     
-    .electrodomesticos-card {
-        width: 280px;
-        padding: 1.5rem;
+    .mensaje-desconexion h4 {
+        font-size: 1em;
     }
     
-    .electrodomesticos-card img {
-        height: 140px;
+    .mensaje-desconexion p {
+        font-size: 0.9em;
     }
     
-    .electrodomesticos-card h3 {
-        font-size: 1.3em;
+    .alerta-electrodomesticos {
+        padding: 8px;
+        font-size: 1em;
     }
     
-    .consumo {
+    .imagen-alerta {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .nombre-titulo {
         font-size: 1.1em;
     }
 }
